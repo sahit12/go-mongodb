@@ -14,10 +14,11 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-    "go.mongodb.org/mongo-driver/mongo/readpref"
+	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-const (
+// TODO - change to string formatted values.
+var (
 
 	URI = "mongodb+srv://<username>:<password>@cicdcluster.4yy64.mongodb.net/<database>?retryWrites=true&w=majority"
 )
@@ -26,7 +27,7 @@ const (
 type ListingAndReviews struct {
 
 	ID 			primitive.ObjectID	`json:"_id,omitempty"`
-	listing_url string 				`json:"listing_url,omitempty"`
+	listing_url	string 				`json:"listing_url,omitempty"`
 	name		string 				`json:"name,omitempty"`
 	summary		string 				`json:"summary,omitempty"`
 	description	string 				`json:"description,omitempty"`
