@@ -77,13 +77,13 @@ func main() {
 	count := 2
 
 	for cursor.Next(ctx) {
-		var result bson.D
+		var result bson.M
 		err := cursor.Decode(&result)
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		fmt.Println(result)
+		fmt.Println(result["_id"], result["amenities"])
 		count--
 
 		if count == 0 {
